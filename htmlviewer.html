@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>MiArt Style - Portfolio Website</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Additional styles for enhanced design */
+
+    /* Home Section */
+  #home {
+  padding: 50px;
+  background: url('https://scontent.fmnl9-1.fna.fbcdn.net/v/t39.30808-6/329831522_744196470377472_7402338211935847587_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeGoHXud72FEWeajAd_imydqhdd1n2vOMIuF13Wfa84wiyY8pr5sb88kCbj7-OakOpmBfBTmFk0cxElILe1scAwE&_nc_ohc=yijwTFWW2UIAX8lUDmG&_nc_ht=scontent.fmnl9-1.fna&oh=00_AfBw2GNV9LfqJkA4CzqPsE6Z7OwX2smciOgkB2BFagmpjQ&oe=64751730') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+    }
+
+    /* Info Section */
+    #info {
+      padding: 50px;
+      background: linear-gradient(to bottom, #1D267D, #8000ff);
+      color: #fff;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      padding: 50px;
+      background: linear-gradient(to bottom, #19376D, #0B2447);
+      color: #fff;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 50px;
+      background: linear-gradient(to bottom,#0C134F, #1D267D);
+      color: #fff;
+    }
+
+    /* Interactive Menu Styles */
+    nav {
+      background-color: #19376D;
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      position: relative;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #ff0080;
+    }
+
+    .arrow-icon {
+      margin-left: 5px;
+    }
+
+    /* Menu Button Styles */
+    .menu-btn {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        cursor: pointer;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding-top: 10px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      nav ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      nav ul li a {
+        padding: 10px 20px;
+        width: 100%;
+      }
+
+      .menu-btn:checked ~ nav ul {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" class="menu-btn" id="menu-checkbox">
+  <label for="menu-checkbox" class="menu-icon"><i class="fas fa-bars"></i></label>
+
+  <nav>
+    <ul>
+      <li><a class="menu-link active" href="#home">Home <i class="fas fa-chevron-down arrow-icon"></i></a></li>
+      <li><a class="menu-link" href="#info">Info <i class="fas fa-chevron-down arrow-icon"></i></a></li>
+      <li><a class="menu-link" href="#gallery">Gallery <i class="fas fa-chevron-down arrow-icon"></i></a></li>
+      <li><a class="menu-link" href="#contact">Contact <i class="fas fa-chevron-down arrow-icon"></i></a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <h1>Welcome to MiArt Style</h1>
+    <p>This is the home section of our portfolio website. We are passionate about creating unique and captivating artwork that reflects our artistic vision and style. Explore our website to learn more about our company, browse through our stunning gallery, and get in touch with us for any inquiries or collaborations.</p>
+  </section>
+
+  <section id="info">
+    <h2>About</h2>
+    <p>At MiArt Style, we strive to deliver exceptional artistic experiences through our diverse range of services. From abstract paintings to sculptures, our talented artists blend creativity, skill, and passion to produce captivating artwork that resonates with art enthusiasts worldwide. Discover more about our journey, philosophy, and the artists behind our creations.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="artwork-item">
+      <img src="https://drive.google.com/uc?export=view&id=1Is1CX3l0NdL3l-5uQCFV2CMp6uv3IjZ7" alt="Artwork 1">
+      <h3>Artwork 1</h3>
+      <p>This is an example artwork.</p>
+    </div>
+    <!-- Add more artwork items as needed -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="#" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="name-error" class="error"></span>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span id="email-error" class="error"></span>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <span id="message-error" class="error"></span>
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Interactive menu functionality
+    const menuLinks = document.querySelectorAll('.menu-link');
+    const sections = document.querySelectorAll('section');
+
+    menuLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Remove active class from all menu links
+        menuLinks.forEach((menuLink) => {
+          menuLink.classList.remove('active');
+        });
+
+        // Add active class to the clicked menu link
+        link.classList.add('active');
+
+        // Scroll to the corresponding section
+        const target = link.getAttribute('href');
+        const section = document.querySelector(target);
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
